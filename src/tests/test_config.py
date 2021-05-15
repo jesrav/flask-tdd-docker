@@ -1,4 +1,11 @@
 import os
+from src.config import convert_db_uri
+
+
+def test_convert_db_uri():
+    uri = "postgres://postgres:postgres@api-db:5432/api_test"
+    converted_uri = convert_db_uri(uri)
+    assert converted_uri == "postgresql://postgres:postgres@api-db:5432/api_test"
 
 
 def test_development_config(test_app):
