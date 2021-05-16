@@ -22,7 +22,7 @@ class DevelopmentConfig(BaseConfig):
 class TestingConfig(BaseConfig):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_TEST_URL")
-
+    SECRET_KEY = os.getenv("SECRET_KEY", "my_precious")
 
 class ProductionConfig(BaseConfig):
     SQLALCHEMY_DATABASE_URI = convert_db_uri(os.environ.get("DATABASE_URL"))
