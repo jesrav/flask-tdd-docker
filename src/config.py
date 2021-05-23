@@ -3,7 +3,7 @@ import os
 
 def convert_db_uri(uri):
     """Fix to Heruku using postgres://"""
-    if uri.startswith("postgres://"):
+    if uri and uri.startswith("postgres://"):
         return uri.replace("postgres://", "postgresql://", 1)
     else:
         return uri
