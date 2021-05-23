@@ -37,7 +37,7 @@ stages:
       displayName: 'Install testing requirements'
     - script: ls
       displayName: 'debugging' 
-    - script: python -m pytest "src/tests" -p no:warnings -o junit_family=xunit2 --junitxml=junit/unit-test.xml
+    - script: python -m pytest "src/tests/test_users_unit" -p no:warnings -o junit_family=xunit2 --junitxml=junit/unit-test.xml
       displayName: 'Run tests'
     - script: flake8 src
       displayName: 'Run Flake8'
