@@ -23,8 +23,8 @@ stages:
 - stage: Test
   displayName: Testing stage
   jobs:
-  - job: Build
-    displayName: Build
+  - job: Test
+    displayName: Test
     pool:
       vmImage: $(vmImageName)
     steps:
